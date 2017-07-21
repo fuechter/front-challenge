@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { View, Image, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, Image, Text, StyleSheet, Dimensions, ScrollView } from 'react-native'
+
+const widthWindow = Dimensions.get('window').width
 
 export default class DetailContainer extends Component {
 
@@ -12,12 +14,13 @@ export default class DetailContainer extends Component {
     const { course } = this.props.navigation.state.params;
 
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
           <Image style={styles.img} source={{uri: course.img}} />
           <Text style={styles.headerTitle}>{course.name}</Text>
         </View>
-      </View>
+        <Text style={styles.text}>{course.text}</Text>
+      </ScrollView>
     )
   }
 }
@@ -35,9 +38,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     left: 0,
+    width: widthWindow
   },
   img: {
-    width: Dimensions.get('window').width,
+    width: widthWindow,
     height: 200
+  },
+  text: {
+    paddingLeft: 10,
+    paddingRight: 10
   }
 })
