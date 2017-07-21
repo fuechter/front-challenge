@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { loadCourse } from '../../redux/actions'
 
-class List extends Component {
+@connect(({course}) => ({course}))
+export class List extends Component {
 
   onClick (course) {
     const { dispatch } = this.props
@@ -24,5 +25,3 @@ class List extends Component {
     )
   }
 }
-
-export default connect(({course}) => ({course}))(List)

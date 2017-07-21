@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import isEmpty from 'lodash/isEmpty'
 import { searchCourse } from '../../redux/actions'
 
-class Detail extends Component {
+@connect(({course: { detail }}) => ({detail}))
+export default class Detail extends Component {
 
   componentWillMount () {
     const { dispatch, detail } = this.props
@@ -48,5 +49,3 @@ const styles = {
     width: '500px'
   }
 }
-
-export default connect((({course: { detail }}) => ({detail})))(Detail)
