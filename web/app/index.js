@@ -26,11 +26,19 @@ const store = createStore(
   applyMiddleware(thunkMiddleware, middleware)
 )
 
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center'
+  }
+}
+
+
 render(
   <AppContainer>
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div>
+        <div style={styles.container}>
           <Route exact path="/" component={List}/>
           <Route path="/detail/:id" component={Detail}/>
         </div>

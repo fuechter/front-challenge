@@ -23,6 +23,9 @@ export default class Detail extends Component {
           <img style={styles.img} src={detail.img} />
           <h1 style={styles.headerTitle}>{detail.name}</h1>
         </div>
+        <p style={styles.text}>
+          {detail.text}
+        </p>
       </div>
     )
   }
@@ -30,9 +33,11 @@ export default class Detail extends Component {
 
 const styles = {
   container: {
+    width: '400px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexDirection: 'column'
   },
   header: {
     position: 'relative',
@@ -46,6 +51,11 @@ const styles = {
     fontFamily: 'Montserrat, sans-serif'
   },
   img: {
-    width: '500px'
+    width: '500px',
+    height: '378px'
+  },
+  text: {
+    width: '100%',
+    padding: '0 10px'
   }
 }
