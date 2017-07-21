@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --optimize-minimize --define process.env.NODE_ENV='production'"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
